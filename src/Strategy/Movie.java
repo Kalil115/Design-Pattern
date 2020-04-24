@@ -1,9 +1,10 @@
 package Strategy;
-
-public class Movie {
+public abstract class Movie {
 
 	private String title;
 	private MoviePriceCode priceCode;
+	private RentalPriceStrategy rentalPriceStrategy;
+	private FrequentRenterPointsStrategy frequentRenterPointsStrategy;
 
 	public Movie(String title, MoviePriceCode priceCode) {
 		this.title = title;
@@ -13,14 +14,29 @@ public class Movie {
 	public String getTitle() {
 		return title;
 	}
-	
+
 	public MoviePriceCode getPriceCode() {
 		return priceCode;
 	}
 
-	public void setPriceCode(MoviePriceCode priceCode) {
-		this.priceCode = priceCode;
+	public void setPriceCode(MoviePriceCode newPriceCode) {
+		this.priceCode = newPriceCode;
 	}
 
+	public RentalPriceStrategy getRentalPriceStrategy() {
+		return rentalPriceStrategy;
+	}
+
+	public void setRentalPriceStrategy(RentalPriceStrategy rentalPriceStrategy) {
+		this.rentalPriceStrategy = rentalPriceStrategy;
+	}
+
+	public FrequentRenterPointsStrategy getFrequentRenterPointsStrategy() {
+		return frequentRenterPointsStrategy;
+	}
+
+	public void setFrequentRenterPointsStrategy(FrequentRenterPointsStrategy frequentRenterPointsStrategy) {
+		this.frequentRenterPointsStrategy = frequentRenterPointsStrategy;
+	}
 
 }
